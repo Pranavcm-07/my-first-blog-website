@@ -17,11 +17,11 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://127.0.0.1:27017/blogDB',{useNewUrlParser:true,useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://admin-pranav:'+process.env.atlas_pass+'@cluster0.punbb0f.mongodb.net/blogDB',{useNewUrlParser:true,useUnifiedTopology: true})
 main().catch(err => console.log(err));
  
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/blogDB',{useNewUrlParser:true,useUnifiedTopology: true});
+  await mongoose.connect('mongodb+srv://admin-pranav:'+process.env.atlas_pass+'@cluster0.punbb0f.mongodb.net/blogDB',{useNewUrlParser:true,useUnifiedTopology: true});
   console.log("Connected");
 }
 
