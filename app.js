@@ -67,6 +67,9 @@ app.get('/posts/:postid',function(req,res){
   .then(function(post){
     res.render('post',{posttitle:post.title,posttext:post.content})
   })
+  .catch(function(err){
+    console.log(err)
+  })
 })
 
 
